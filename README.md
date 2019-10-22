@@ -38,12 +38,31 @@
 
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Link_Device03.png)
 
-26.  You can use tags to target groups of devices for module deployment. Add a tag value to the Initial Device Twin State if you'd like.
+26. You can use tags to target groups of devices for module deployment. Add a tag value to the Initial Device Twin State if you'd like.
 For example:
 
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Link_Device04.png)
 
 Note. The ESRP-CSS-UNOxxxx value is for the ﬁrmware update in Device Management section. 
 
-27.  Go back to edge device, open a terminal and run iotedgecli.  
+27. Go back to edge device, open a terminal and run iotedgecli.  
 
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge00.png)
+
+28. Choose dps. Then enter ID scope and Registration ID.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge01.png)
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge02.png)
+
+29. If below screen show up, means the IoT Edge Service is strated. 
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge03.png)
+
+30. Run the following command to check if IoT edge runtime is running normally. If there are any error, please follow the Common issues and resolutions for Azure IoT Edge for trouble shooting. 
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge04.png)
+
+Note: The tpm_device_provision command can’t be execute when iotedge service is running. If below screen appears, please stop iotedge service first. And start it later. 
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge05.png)
