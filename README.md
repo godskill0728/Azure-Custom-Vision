@@ -68,7 +68,7 @@ Note: The tpm_device_provision command can’t be execute when iotedge service i
 
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge05.png)
 
-# How to build docker image and deploy to edge device
+# Custom Vision Demo
 The architecture about this demo is as below:
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Demo_Architecture.png)
 1. The Camera Capture Module handles scanning items using a camera. It then calls the Image Classification module to identify the item, a call is then made to the "Text to Speech" module to convert item label to speech, and the name of the item scanned is played on the attached speaker.
@@ -80,5 +80,5 @@ The architecture about this demo is as below:
 7. Azure Speech Services (free tier) is used to generate very natural speech telling the shopper what they have just scanned.
 8. Azure Custom Vision service was used to build the model used for image classification.
 
-
+# How to build docker image and deploy to edge device
 
