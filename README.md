@@ -13,9 +13,8 @@
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Create_IoT_Hub03.png)
 8. Now we need to create DPS (Device Provisioning Service)
 9. Click the Create a resource button found on the upper left-hand corner of the Azure portal. 
-10. Search the Marketplace for the Device Provisioning Service. Select IoT Hub Device Provisioning Service and click the Create button.
-
-![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Create_DPS01.png)
-
-11. Provide the following information for your new Device Provisioning Service instance and click Create.
+10. Search the Marketplace for the Device Provisioning Service. 
+11. Select IoT Hub Device Provisioning Service and click the Create button.
+ ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Create_DPS01.png)
+12. Provide the following information for your new Device Provisioning Service instance and click Create.
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Create_DPS02.png)
