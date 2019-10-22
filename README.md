@@ -37,6 +37,7 @@
 25. Provide an ID for your device if you'd like. You can use device IDs to target an individual device for module deployment.
 
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Link_Device03.png)
+
 26.  You can use tags to target groups of devices for module deployment. Add a tag value to the Initial Device Twin State if you'd like.
 For example:
 
