@@ -44,3 +44,6 @@ For example:
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Link_Device04.png)
 
 Note. The ESRP-CSS-UNOxxxx value is for the ﬁrmware update in Device Management section. 
+
+27.  Go back to edge device, open a terminal and run iotedgecli.  
+
