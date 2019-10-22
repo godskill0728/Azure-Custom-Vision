@@ -86,7 +86,7 @@ The architecture about this demo is as below:
 git clone https://github.com/godskill0728/Azure-Custom-Vision.git
 
 2. Install the Azure IoT Edge runtime on your Linux desktop or device (eg Raspberry Pi).
-Follow the instructions to Deploy your first IoT Edge module to a Linux x64 device.
+Follow the instructions to [Deploy your first IoT Edge module to a Linux x64 device](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux?WT.mc_id=devto-blog-dglover).
 
 3. Install the following software development tools.
 	+ [Visual Studio Code](https://code.visualstudio.com/)
