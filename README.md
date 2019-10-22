@@ -82,3 +82,16 @@ The architecture about this demo is as below:
 
 # How to build docker image and deploy to edge device
 
+1. Clone this GitHub repository.
+git clone https://github.com/godskill0728/Azure-Custom-Vision.git
+
+2. Install the Azure IoT Edge runtime on your Linux desktop or device (eg Raspberry Pi).
+Follow the instructions to Deploy your first IoT Edge module to a Linux x64 device.
+
+3. Install the following software development tools.
+	+ [Visual Studio Code](https://code.visualstudio.com/)
+	+ Plus, the following Visual Studio Code Extensions
+		+ [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge)
+		+ [JSON Tools](https://marketplace.visualstudio.com/items?itemName=eriklynd.json-tools) useful for changing the "Create Options" for a module.
+
+4. With Visual Studio Code, open the IoT Edge solution you cloned from GitHub to your developer desktop.
