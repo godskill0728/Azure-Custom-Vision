@@ -1,3 +1,4 @@
+# Connect Edge Device and Azure
 1. We need to connect your physical device with a device identity that exists in an Azure IoT Hub. An overview of the process is showed in below picture.
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Azure_Device_Connecting.png)
 2. Open terminal, type below command. Copy TPM RegistrationID and TPM Endorsement Key for later use. 
@@ -66,3 +67,18 @@ Note. The ESRP-CSS-UNOxxxx value is for the ﬁrmware update in Device Managemen
 Note: The tpm_device_provision command can’t be execute when iotedge service is running. If below screen appears, please stop iotedge service first. And start it later. 
 
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Edge05.png)
+
+# How to build docker image and deploy to edge device
+The architecture about this demo is as below:
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Demo_Architecture.png)
+1. The Camera Capture Module handles scanning items using a camera. It then calls the Image Classification module to identify the item, a call is then made to the "Text to Speech" module to convert item label to speech, and the name of the item scanned is played on the attached speaker.
+2. The Image Classification Module runs a Tensorflow machine learning model that has been trained with images of fruit. It handles classifying the scanned items.
+3. The Text to Speech Module converts the name of the item scanned from text to speech using Azure Speech Services.
+4. A USB Camera is used to capture images of items to be bought.
+5. A Speaker for text to speech playback.
+6. Azure IoT Hub (Free tier) is used for managing, deploying, and reporting Azure IoT Edge devices running the solution.
+7. Azure Speech Services (free tier) is used to generate very natural speech telling the shopper what they have just scanned.
+8. Azure Custom Vision service was used to build the model used for image classification.
+
+
+
