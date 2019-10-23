@@ -10,6 +10,40 @@ The architecture about this demo is as below:
 7. Azure Speech Services (free tier) is used to generate very natural speech telling the shopper what they have just scanned.
 8. Azure Custom Vision service was used to build the model used for image classification.
 
+# Azure Services
+## Creating the Classification Model
+The [Azure Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/?WT.mc_id=devto-blog-dglover)
+ service is a simple way to create an image classification machine learning model without having to be a data science or machine learning expert. You simply upload multiple collections of labelled images. For example, you could upload a collection of banana images and label them as 'banana'. In this demo we create the people modules. So you need to create your own module before building this demo project.
+
+To create your own classification model read [How to build a classifier with Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier?WT.mc_id=devto-blog-dglover) for more information. It is important to have a good variety of labelled images so be sure to read [How to improve your classifier](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier?WT.mc_id=devto-blog-dglover).
+
+## Exporting an Azure Custom Vision Model
+This "Image Classification" module includes a simple fruit classification model that was exported from Azure Custom Vision. For more information read how to [Export your model for use with mobile devices](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/export-your-model?WT.mc_id=devto-blog-dglover). It is important to select one of the "compact" domains from the project settings page otherwise you will not be able to export the model.
+
+Follow these steps to export your Custom Vision project model.
+1. From the Performance tab of your Custom Vision project click Export.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/exportmodel.png)
+
+2. Select Dockerfile from the list of available options
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/export-as-docker.png)
+
+3. Then select the Linux version of the Dockerfile.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/export-choose-your-platform.png)
+
+4. Download the docker file and unzip and you have a ready-made Docker solution with a Python Flask REST API.
+
+## Azure Speech Services
+[Azure Speech Services](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview/?WT.mc_id=devto-blog-dglover) supports both "speech to text" and "text to speech". For this solution, I'm using the text to speech (F0) free tier which is limited to 5 million characters per month. You will need to add the Speech service using the Azure Portal and "Grab your key" from the service.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Speech_Key01.png)
+
+Open the deployment.template.json file and update the BingKey with the key you copied from the Azure Speech service.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Speech_Key02.png)
+
 # Connect Edge Device and Azure
 1. We need to connect your physical device with a device identity that exists in an Azure IoT Hub. An overview of the process is showed in below picture.
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Azure_Device_Connecting.png)
