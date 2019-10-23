@@ -125,3 +125,19 @@ Please refer [How to create Azure Container Registry](https://docs.microsoft.com
 When the Docker Build and Push process has completed select the Azure IoT Hub device you want to deploy the solution to. Right mouse click the deployment.json file found in the config folder and select the target device from the drop-down list.
 
 ![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Deployment.png)
+
+# Monitoring the Solution on the IoT Edge Device
+Once the solution has been deployed you can monitor it on the IoT Edge device itself using the iotedge list command.
+
+``` iotedge list ```
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/iotedge_list.png)
+
+# Monitoring the Solution from the Azure IoT Edge Blade
+You can monitor the state of the Azure IoT Edge module from the Azure IoT Hub blade on the Azure Portal.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Hub_Device.png)
+
+Click on the device from the Azure IoT Edge blade to view more details about the modules running on the device.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/IoT_Hub_Module.png)
