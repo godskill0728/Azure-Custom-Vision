@@ -95,3 +95,33 @@ Follow the instructions to [Deploy your first IoT Edge module to a Linux x64 dev
 		+ [JSON Tools](https://marketplace.visualstudio.com/items?itemName=eriklynd.json-tools) useful for changing the "Create Options" for a module.
 
 4. With Visual Studio Code, open the IoT Edge solution you cloned from GitHub to your developer desktop.
+
+# Projhect Atchitecture
+1. There are two modules: CameraCaptureOpenCV and ImageClassifierService.
+2. The module.json file defines the Docker build process, the module version, and your docker registry. Updating the version number, pushing the updated module to an image registry, and updating the deployment manifest for an edge device triggers the Azure IoT Edge runtime to pull down the new module to the edge device.
+3. The deployment.template.json file is used by the build process. It defines what modules to build, what message routes to set up, and what version of the IoT Edge runtime to run.
+4. The deployment.json file is generated from the deployment.template.json and is the [Deployment Manifest](https://docs.microsoft.com/en-us/azure/iot-edge/module-composition?WT.mc_id=devto-blog-dglover)
+5. The version.py in the project root folder is a helper app you can run on your development machine that updates the version number of each module. Useful as a change in the version number is what triggers Azure IoT Edge runtime to pull the updated module and it is easy to forget to change the module version numbers
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Project_Architecture.png)
+
+# Building the Solution
+You need to ensure the image you plan to build matches the target processor architecture specified in the deployment.template.json file.
+1. Specify your Docker repository in the module.json file for each module. If you are using a supported Linux Azure IoT Edge Distribution, such as Ubuntu 16.04 as your development machine and you have Azure IoT Edge installed locally then I strongly recommend setting up a Azure Container Register space. It will significantly speed up your development, deployment and test cycle.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Container_Registry.png)
+
+Please refer [How to create Azure Container Registry](https://docs.microsoft.com/zh-tw/azure/container-registry/container-registry-get-started-portal) to create your own Azure Container Registry.
+
+2. We will build our own docker images and upload to Azure Container Registry. Then we will deploy these docker images into target device.
+3. Confirm processor architecture you plan to build for. From the Visual Studio Code bottom bar click the currently selected processor architecture, then from the popup select the desired processor architecture.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Processor_Architecture.png)
+
+4. Next, Build and Push the solution to Docker by right mouse clicking the deployment.template.json file and select "Build and Push IoT Edge Solution". The first build will be slow as Docker needs to pull the base layers to your local machine. If you are cross compiling to arm32v7 then the first build will be very slow as OpenCV and Python requirements need to be compiled. On a fast Intel i7-8750H processor cross compiling this solution will take approximately 40 minutes.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Build_Solution.png)
+
+# Deploying the Solution
+When the Docker Build and Push process has completed select the Azure IoT Hub device you want to deploy the solution to. Right mouse click the deployment.json file found in the config folder and select the target device from the drop-down list.
+
+![image](https://github.com/godskill0728/Azure-Custom-Vision/blob/master/docs/Deployment.png)
